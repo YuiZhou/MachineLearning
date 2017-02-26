@@ -13,10 +13,9 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-h = X * theta;
-delta = h - y;
-J = sum(delta' * delta)/(2*m);
 
+bias = X * theta - y;
+J = (bias' * bias)/(2 * m);
 
 
 % =========================================================================
