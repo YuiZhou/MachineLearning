@@ -20,12 +20,12 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+% h = sigmoid(XTtheta)
+h = sigmoid(X * theta);
 
+J = (-transpose(y) * log(h) - transpose(1 - y)* log(1 - h))/ m;
 
-
-
-
-
+grad = (transpose(X) * (h - y)) / m;
 
 % =============================================================
 
