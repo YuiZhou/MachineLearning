@@ -29,13 +29,13 @@ X = [ones(m, 1) X];
 %       are in rows, then, you can use max(A, [], 2) to obtain the max 
 %       for each row.
 %       
+predict = X * transpose(all_theta);
 
-
-
-
-
-
-
+for c = 1 : m
+    predict_i = predict(c , :);
+    [~, I] = max(predict_i);
+    p(c) = I;
+end
 % =========================================================================
 
 

@@ -52,9 +52,9 @@ X = [ones(m, 1) X];
 for c = 1 : num_labels
     theta_inital = all_theta(c, :);
     options = optimset('GradObj', 'on', 'MaxIter', 50);
-    %fprintf('all theta size is %d', size(all_theta));
+    //fprintf('all theta size is %d', size(all_theta));
     trans = transpose(theta_inital);
-    trans = fmincg (@(t)(lrCostFunction(t, X, (y == c), lambda)), trans, options);
+    trans = fmincg (@(trans)(lrCostFunction(trans, X, y, lambda)), trans, options);
     all_theta(c, :) = transpose(trans);
 end
 
